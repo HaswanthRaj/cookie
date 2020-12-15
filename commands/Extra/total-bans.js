@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: "totalbans",
-    category: "extra",
+    category: "Extra",
     run: async (client, message, args) => {
 
         message.guild.fetchBans().then(bans => {

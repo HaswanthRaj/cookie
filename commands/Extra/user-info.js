@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: "user",
     aliases: ["whois", "userinfo", "user-info"],
-    category: "extra",
+    category: "Extra",
     run: async (client, message, args) => {
         let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
 

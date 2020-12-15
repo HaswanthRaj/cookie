@@ -4,7 +4,7 @@ const trim = (str, max) => ((str.length > max) ? `${str.slice(0, max - 3)}...` :
 
 module.exports = {
     name: "def",
-    category: "extra",
+    category: "Extra",
     run: async (client, message, args) => {
      const fetch = require('node-fetch');
     const querystring = require('querystring');

@@ -4,7 +4,7 @@ const { getMember } = require("../../functions.js");
 module.exports = {
     name: "love",
     aliases: ["affinity"],
-    category: "fun",
+    category: "Fun",
     description: "Calculates the love affinity you have for another person.",
     usage: "[mention | id | username]",
     run: async (client, message, args) => {

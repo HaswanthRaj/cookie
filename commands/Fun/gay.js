@@ -4,7 +4,7 @@ const { getMember } = require("../../functions.js");
 module.exports = {
     name: "gay",
     aliases: ["howgay"],
-    category: "fun",
+    category: "Fun",
     description: "Calculates the gayness for another person.",
     usage: "[mention | id | username]",
     run: async (client, message, args) => {

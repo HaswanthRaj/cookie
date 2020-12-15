@@ -1,6 +1,6 @@
 module.exports={
     name:"8ball",
-    category: "extra",
+    category: "Fun",
 run: async (client, message, args) =>{
     const answers = [
         'Maybe.',

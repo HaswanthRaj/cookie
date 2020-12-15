@@ -2,7 +2,7 @@ const giphy = require('giphy-api')('nEa4jRswrhil8vYgM1G2RqAp2L0YVzZ0');
 
 module.exports = {
     name: "gif",
-    category: "extra",
+    category: "Extra",
 
     run: async (client, message, args) =>{
 

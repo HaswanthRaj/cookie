@@ -4,7 +4,7 @@ const weather = require('weather-js');
 
 module.exports = {
     name: "weather",
-    category: "extra",
+    category: "Extra",
     run: async (client, message, args) => {
   weather.find({search: args.join(" "), degreeType: 'C'}, function (error, result){
     // 'C' can be changed to 'F' for farneheit results

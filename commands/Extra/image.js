@@ -10,7 +10,7 @@ const cheerio = require('cheerio')
 module.exports = {
     name: "img",
     aliases: ["i"],
-    category: "extra", 
+    category: "Extra", 
     timeout: 10000,
     run: async (client, message, args) => {   
     if(!message.channel.id === '745573214964678726') return message.channel.send(`You can only use this command in <#745573214964678726>`).then(m => m.delete({timeout: 10000}))

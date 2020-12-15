@@ -3,7 +3,7 @@ const axios = require('axios');
 
 module.exports = {
     name: "joke",
-    category: "fun",
+    category: "Fun",
     run: async (client, message, args) => {
         const url = "https://some-random-api.ml/joke";      
         let image, response;

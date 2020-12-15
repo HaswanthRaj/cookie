@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: "serverinfo",
-    category: "extra",
+    category: "Extra",
     run: async (client, message, args) => {
         let region = message.guild.region;
 

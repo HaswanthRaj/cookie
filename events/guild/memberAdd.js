@@ -4,7 +4,10 @@ const Discord = require('discord.js')
 const Canvas = require('canvas');
 
 module.exports = async (member) => {
-  const channel = member.guild.channels.cache.find(ch => ch.name === 'just-joined❤');
+  const { guild } = member
+  // Access the channel ID for this guild from the cache
+  // Access the actual channel and send the message
+  const channel = guild.channels.cache.get('745535441939202109')
   if(!channel) return;
   channel.send(`Hey ${member}, Welcome to COOKIE :)`)
  

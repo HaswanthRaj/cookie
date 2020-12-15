@@ -3,7 +3,7 @@ const axios = require('axios');
 
 module.exports = {
     name: "hug",
-    category: "extra",
+    category: "Extra",
     run: async (client, message, args) => {
         const url = 'https://some-random-api.ml/animu/hug';
 
