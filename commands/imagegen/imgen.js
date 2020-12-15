@@ -130,7 +130,7 @@ module.exports = {
       update.setTitle('Imgen help' )
       update.setColor('RANDOM')
       update.setThumbnail('https://cdn.discordapp.com/avatars/748778813357555733/f1acd65fdf22a6c1187e445179ec431b.png?size=256')
-      update.setDescription('`kid imgen gay, kid imgen ad, kid imgen delete, kid imgen beautiful, kid imgen rip, kid imgen wanted, kid imgen facepalm, kid imgen bobross`')
+      update.setDescription('`\' imgen gay, \' imgen ad, \' imgen delete, \' imgen beautiful, \' imgen rip, \' imgen wanted, \' imgen facepalm, \' imgen bobross`')
       update.addField("Check Loney Website", "[Check Loney Website for help and support](https://www.loney.epizy.com/)")
       update.setTimestamp()
       message.channel.send(update);

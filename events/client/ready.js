@@ -2,15 +2,13 @@ module.exports = client => {
 
     setInterval(function() {
       let botStatus = [
-        `to ${client.commands.size} commands`,
-        `to ${client.aliases.size} aliases`,
-        `to COOKIE Server!`,
-        `to ${client.users.cache.size} users!`,
-        `to COOKIE's Users`,
-        `to my prefixes ' ,c! , cookie`,
-        `to 'help `,
-        `to Vote now to COOKIE`,
-        `to ${client.channels.cache.size} channels!`,
+        `COOKIE Server!`,
+        ` ${client.users.cache.size} users!`,
+        ` COOKIE's Users`,
+        ` my prefixes ' ,c! , cookie`,
+        `'help `,
+        ` Vote now to COOKIE`,
+        `${client.channels.cache.size} channels!`,
     
     ]
     let status = botStatus[Math.floor(Math.random() * botStatus.length)];

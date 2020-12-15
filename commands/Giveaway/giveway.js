@@ -25,8 +25,26 @@ module.exports={
             time: ms(args[0]),
             prize: args.slice(2).join(" "),
             winnerCount: parseInt(args[1]),
-            HostedBy: message.author
-        })
+            messages: {
+                giveaway: "\n🎉🎉 **GIVEAWAY** 🎉🎉",
+                giveawayEnded: "\n🎉🎉 **GIVEAWAY ENDED** 🎉🎉",
+                timeRemaining: "Time remaining: **{duration}**!",
+                inviteToParticipate: "React with 🎉 to participate!",
+                winMessage: "Congratulations, {winners}! You won **{prize}**!",
+                embedFooter: "Giveaways",
+                noWinner: "Giveaway cancelled, no valid participations.",
+                hostedBy: "Hosted by: {user}",
+                winners: "winner(s)",
+                endedAt: "Ended at",
+                units: {
+                    seconds: "seconds",
+                    minutes: "minutes",
+                    hours: "hours",
+                    days: "days",
+                    pluralS: false // Not needed, because units end with a S so it will automatically removed if the unit value is lower than 2
+                }
+            }
+        });
         if (message.deletable) message.delete();
         // And the giveaway has started!
     }

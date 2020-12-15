@@ -25,7 +25,7 @@ module.exports = {
     const serverQueue = message.client.queue.get(message.guild.id);
     if (!channel) return message.reply("You need to join a voice channel first!").catch(console.error);
     if (serverQueue && channel !== message.guild.me.voice.channel)
-      return message.reply(`You must be in the same channel as ${message.author.username}`).catch(console.error);
+      return message.channel.send(`You must be in the same channel ${message.author.username}`).catch(console.error);
 
     if (!args.length)
       return message
