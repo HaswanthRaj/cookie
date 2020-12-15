@@ -4,13 +4,13 @@ module.exports = client => {
       let botStatus = [
         `to ${client.commands.size} commands`,
         `to ${client.aliases.size} aliases`,
-        `to COOKIE Server!`
-        `Over ${client.users.cache.size} users!`,
+        `to COOKIE Server!`,
+        `to ${client.users.cache.size} users!`,
         `to COOKIE's Users`,
         `to my prefixes ' ,c! , cookie`,
         `to 'help `,
-        `to Vote now to COOKIE`
-        `Over ${client.channels.cache.size} channels!`,
+        `to Vote now to COOKIE`,
+        `to ${client.channels.cache.size} channels!`,
     
     ]
     let status = botStatus[Math.floor(Math.random() * botStatus.length)];
