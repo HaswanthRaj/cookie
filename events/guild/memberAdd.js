@@ -7,6 +7,7 @@ module.exports = async (member) => {
   const { guild } = member
   // Access the channel ID for this guild from the cache
   // Access the actual channel and send the message
+  console.log('in member add')
   const channel = guild.channels.cache.get('745535441939202109')
   if(!channel) return;
   channel.send(`Hey ${member}, Welcome to COOKIE :)`)
