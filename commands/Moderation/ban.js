@@ -23,10 +23,6 @@ module.exports = {
             red.setDescription(`**Please mention the user ${message.author.username}**`)
             return message.channel.send(red);
         }
-        if (!user.bannable){
-            red.setDescription(`**You can't ban a Mod/ Admin**`)
-            return message.channel.send(red);
-        }
         if (user.id === message.author.id){
             red.setDescription(`**You can't ban yourself**`)
             return message.channel.send(red); 
@@ -40,10 +36,10 @@ module.exports = {
         member.ban(reason).then(() => {
             const green = new Discord.MessageEmbed()
             green.setColor('GREEN')
-            green.setDescription(`**Successfully banned **${user.tag}** <:ag_tickop:781410518442180641>`)
+            green.setDescription(`**Successfully banned **${user.tag}**`)
           message.channel.send(green);
         }).catch(err => {
-            red.setDescription(`**I was unable to ban the member ${user.tag}**`)
+            red.setDescription(`**I was unable to ban the member ${user.tag} Maybe he is admin/mod**`)
           message.channel.send(red)
         })
             

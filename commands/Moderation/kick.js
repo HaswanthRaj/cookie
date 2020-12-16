@@ -23,10 +23,7 @@ module.exports = {
             red.setDescription(`**Please mention the user ${message.author.username}**`)
             return message.channel.send(red);
         }
-        if (!user.kickable){
-            red.setDescription(`**You can't kick a Mod/ Admin**`)
-            return message.channel.send(red);
-        }
+        
         if (user.id === message.author.id){
             red.setDescription(`**You can't kick yourself**`)
             return message.channel.send(red); 
@@ -40,10 +37,10 @@ module.exports = {
         member.kick(reason).then(() => {
             const green = new Discord.MessageEmbed()
             green.setColor('GREEN')
-            green.setDescription(`**Successfully kicked **${user.tag}** <a:ag_tickop:781410518442180641>`)
+            green.setDescription(`**Successfully kicked **${user.tag}**`)
           message.channel.send(green);
         }).catch(err => {
-            red.setDescription(`**I was unable to kick the member ${user.tag}**`)
+            red.setDescription(`**I was unable to kick the member ${user.tag} Maybe he is admin/mod**`)
           message.channel.send(red)
         })
             
