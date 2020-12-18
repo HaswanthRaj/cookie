@@ -14,34 +14,34 @@ module.exports = {
             red.setDescription(`**You don't have a permissions to do this. ${message.author.username}**`)
             return message.channel.send(red);
         }
-        let user = message.mentions.users.first();
+        const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
+        let reason = args.slice(2).join(" ");
         
-        let member = message.guild.member(user);
-        let reason = args.slice(22).join(" ");
-        
-        if (!user) {
+        if (!member) {
             red.setDescription(`**Please mention the user ${message.author.username}**`)
             return message.channel.send(red);
         }
-        if (user.id === message.author.id){
+        if (member.id === message.author.id){
             red.setDescription(`**You can't ban yourself**`)
             return message.channel.send(red); 
         } 
-        if (user.id === client.user.id) {
+        if (member.id === client.user.id) {
             red.setDescription(`**You can't ban me**`)
             return message.channel.send(red);
         }
         
         if (!reason) reason = "No reason provided";
-        member.ban(reason).then(() => {
-            const green = new Discord.MessageEmbed()
-            green.setColor('GREEN')
-            green.setDescription(`**Successfully banned **${user.tag}**`)
-          message.channel.send(green);
-        }).catch(err => {
-            red.setDescription(`**I was unable to ban the member ${user.tag} Maybe he is admin/mod**`)
-          message.channel.send(red)
-        })
+        if (!args[0]) {
+            return message.channel.send(`Please mention a user!`)
+        }
+       
+
+        try {
+            await member.ban()
+            await message.channel.send(`${member} has been banned!`)
+        } catch (e) {
+            return message.channel.send(`**I can't ban this user maybe he is admin/mod**`)
+        }
             
     }
 }
