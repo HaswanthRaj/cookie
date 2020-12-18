@@ -12,7 +12,7 @@ module.exports = {
       if (!args[0]){
         let help= new MessageEmbed()
   help.setColor('RANDOM')
-  help.setTitle('Loney Help')
+  help.setTitle('COOKIE Help')
   help.addFields(
     { name: '\u200B', value: '\u200B' },
     { name: '**Image Commands**', value: '`\' help image`',inline: true },
