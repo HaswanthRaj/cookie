@@ -44,7 +44,7 @@
     "string-progressbar": "^1.0.1",
     "user-instagram": "^2.1.8",
     "weather-js": "^2.0.0",
-    "ytdl-core": "^4.1.6",
+    "ytdl-core": "^4.2.1",
     "ytdl-core-discord": "^1.2.4",
     "zlib-sync": "^0.1.6"
   },

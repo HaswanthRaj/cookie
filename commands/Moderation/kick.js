@@ -8,8 +8,6 @@ module.exports = {
         const red = new Discord.MessageEmbed()
         red.setColor('RED')
 
-        
-        if (message.deletable) message.delete();
         if (!message.member.hasPermission("KICK_MEMBERS") || !message.member.hasPermission("ADMINISTRATOR")) {
             red.setDescription(`**You don't have a permissions to do this. ${message.author.username}**`)
             return message.channel.send(red);
