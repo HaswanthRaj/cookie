@@ -10,13 +10,15 @@ module.exports={
         const emb = new Discord.MessageEmbed()
         emb.setColor("RED")
         emb.setTitle("Cookie Shop")
-        emb.setAuthor('COOKIE')
+        emb.setDescription('You can buy Items from cookie shop by \' buy <item number>')
         emb.addFields(
             { name: '\u200B', value: '\u200B' },
-            { name: '**Xbox Game Pass**', value: '`Price:~~20000~~  10000 🍪 `',inline: false },
-            { name: '**Green Color**', value: '`Price: 500 🍪 `',inline: false },
-            {name: "**Violet Color**",  value: '`Price: 500 🍪`', inline:false }
+            { name: '**1. Xbox Game Pass**', value: 'Price:~~20000~~ ` 10000 🍪 `',inline: false },
+            { name: '**2. Green Color**', value: 'Price: `500 🍪 `',inline: false },
+            {name: "**3. Violet Color**",  value: 'Price: `500 🍪`', inline:false }
         )
+        emb.setFooter('You can buy Cool itmes in this cookie shop ')
+        emb.setTimestamp()
         message.channel.send(emb)
     }
 }

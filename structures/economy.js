@@ -83,6 +83,7 @@ module.exports = {
     }
     
     addDoc.money += parseInt(amount, 10)
+    addDoc.username = name
     await addDoc.save().catch(e => console.log(`Something went wrong while trying to add mone: ${e}`))
     
     return addDoc;
