@@ -7,7 +7,7 @@ const client = new Discord.Client({
     disableEveryone: true,
   });
 
-  client.commands = new Enmap();
+client.commands = new Enmap();
 client.queue = new Map();
 const config = require("./botconfig.json");
 const token = config.token;
@@ -18,10 +18,7 @@ client.categories = fs.readdirSync("./commands/");
 client.prefix = config.prefix;
 client.config = {
     api: "AIzaSyCwocR-b9g13qwyBglT32YhKBJ66THVA8k"
-};
-
-
-const { GiveawaysManager } = require("discord-giveaways");
+};const { GiveawaysManager } = require("discord-giveaways");
 // Starts updating currents giveaways
 const manager = new GiveawaysManager(client, {
     storage: "./giveaways.json",
