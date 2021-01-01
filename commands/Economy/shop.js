@@ -7,7 +7,7 @@ module.exports={
     timeout: 10000,
     run: async(client, message, args)=>{
 
-        const emb = new Discord.Messageembed()
+        const emb = new Discord.MessageEmbed()
         emb.setColor("RED")
         emb.setTitle("Cookie Shop")
         emb.setAuthor('COOKIE')

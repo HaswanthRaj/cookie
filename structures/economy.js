@@ -4,8 +4,7 @@ module.exports = {
     createuser: async function(user, guild, name, message) {
         if(!user) throw new TypeError("No user id was provided")
     const createDoc = await schema.findOne({
-      user,
-      name
+      user
     })
     
     if(createDoc) return false
@@ -20,10 +19,10 @@ module.exports = {
     return create;
     },
 
-    balance: async function(user) {
+    balance: async function(user, name) {
         if(!user) throw new TypeError("No user id was provided")        
         const fetchDoc = await schema.findOne({
-          user,
+          user
         })
         
         if(!fetchDoc) {
@@ -40,6 +39,26 @@ module.exports = {
         return { money: fetchDoc.money, bank: fetchDoc.bank }
       
     },
+    userdata: async function(user) {
+      if(!user) throw new TypeError("No user id was provided")        
+      const fetchData = await schema.findOne({
+        user
+      })
+      
+      if(!fetchData) {
+        const newFetch = new schema({
+          user,
+          name
+        })
+        
+        newFetch.save().catch(e => console.log(`There was an error while trying to fetch data`))
+        
+        return newFetch;
+      }
+      
+      return fetchData
+    
+  },
 
     add: async function (user, name, amount, options) {
         if(!user) throw new TypeError("No user id was provided")
@@ -47,15 +66,14 @@ module.exports = {
     if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
     
     const addDoc = await schema.findOne({
-      user,
-      name
+      user
     });
     if(!options) {
     
     if(!addDoc) {
       const newAdd = new schema({
         user,
-        name,
+        username: name,
         amount
       })
       
@@ -72,8 +90,7 @@ module.exports = {
       switch(options) {
         case 'wallet':
           const optionsDoc = await schema.findOne({
-            user,
-            name
+            user
           })
           
           if(!optionsDoc) {
@@ -95,8 +112,7 @@ module.exports = {
           return optionsDoc;
         case 'bank':
           const optionsBankDoc = await schema.findOne({
-            user,
-            name,
+            user
           })
           
           if(!optionsBankDoc) {
@@ -123,15 +139,14 @@ module.exports = {
     }
     
 },
-          sub: async function(){
+          sub: async function(user, amount, options){
             if(!user) throw new TypeError("No user id was provided")
             if(!amount) throw new TypeError("An amount of money need to be provided")
            
             if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
             
             const subtractDoc = await schema.findOne({
-              user,
-              name
+              user
             })
             if(!options) {
               
@@ -159,8 +174,7 @@ module.exports = {
                   return optionsDoc;
                 case 'bank':
                   const optionsBankDoc = await schema.findOne({
-                    user,
-                    name
+                    user
                   })
                   
                   if(!optionsBankDoc) return false
@@ -179,12 +193,10 @@ module.exports = {
           trex: async function (user, name, amount) {
             if(!user) throw new TypeError("No user id was provided")
         if(!amount) throw new TypeError("An amount of money need to be provided")
-       
         if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
         
         const addDoc = await schema.findOne({
-          user,
-          name
+          user
         });
         
         if(!addDoc) {
@@ -210,12 +222,10 @@ module.exports = {
     fish: async function (user, name, amount) {
       if(!user) throw new TypeError("No user id was provided")
   if(!amount) throw new TypeError("An amount of money need to be provided")
- 
   if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
   
   const addDoc = await schema.findOne({
-    user,
-    name
+    user
   });
   
   if(!addDoc) {
@@ -240,12 +250,11 @@ module.exports = {
 deer: async function (user, name, amount) {
   if(!user) throw new TypeError("No user id was provided")
 if(!amount) throw new TypeError("An amount of money need to be provided")
-if(!isNaN(amount)) throw new TypeError("Amount need to be a number")
+
 if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
 
 const addDoc = await schema.findOne({
-user,
-name
+user
 });
 
 if(!addDoc) {
@@ -274,8 +283,7 @@ return addDoc;
  if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
 
  const addDoc = await schema.findOne({
- user,
- name
+ user
  });
 
  if(!addDoc) {
@@ -294,6 +302,181 @@ return addDoc;
  await addDoc.save().catch(e => console.log(`Something went wrong while trying to add mone: ${e}`))
 
  return addDoc;
+
+
+},
+
+wildpig: async function (user, name, amount) {
+  if(!user) throw new TypeError("No user id was provided")
+ if(!amount) throw new TypeError("An amount of money need to be provided")
+ 
+ if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
+
+ const addDoc = await schema.findOne({
+ user,
+ });
+
+ if(!addDoc) {
+ const newAdd = new schema({
+   user: user,
+   username: name,
+   wildpig: amount,
+ })
+
+ await newAdd.save().catch(e => console.log(`Something went wrong while trying to add money: ${e}`))
+
+ return newAdd;
+ }
+
+ addDoc.wildpig += parseInt(amount, 10)
+ await addDoc.save().catch(e => console.log(`Something went wrong while trying to add mone: ${e}`))
+
+ return addDoc;
+
+
+},
+subtrex: async function (user, name, amount) {
+  if(!user) throw new TypeError("No user id was provided")
+if(!amount) throw new TypeError("An amount of money need to be provided")
+if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
+
+const addDoc = await schema.findOne({
+user
+});
+
+if(!addDoc) {
+const newAdd = new schema({
+  user: user,
+  username: name,
+  trex: amount,
+})
+
+await newAdd.save().catch(e => console.log(`Something went wrong while trying to add money: ${e}`))
+
+return newAdd;
+}
+
+addDoc.trex -= parseInt(amount, 10)
+await addDoc.save().catch(e => console.log(`Something went wrong while trying to add mone: ${e}`))
+
+return addDoc;
+
+
+},
+
+subfish: async function (user, name, amount) {
+if(!user) throw new TypeError("No user id was provided")
+if(!amount) throw new TypeError("An amount of money need to be provided")
+if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
+
+const addDoc = await schema.findOne({
+user
+});
+
+if(!addDoc) {
+const newAdd = new schema({
+user: user,
+username: name,
+fish: amount,
+})
+
+await newAdd.save().catch(e => console.log(`Something went wrong while trying to add money: ${e}`))
+
+return newAdd;
+}
+
+addDoc.fish -= parseInt(amount, 10)
+await addDoc.save().catch(e => console.log(`Something went wrong while trying to add mone: ${e}`))
+
+return addDoc;
+
+
+},
+subdeer: async function (user, name, amount) {
+if(!user) throw new TypeError("No user id was provided")
+if(!amount) throw new TypeError("An amount of money need to be provided")
+
+if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
+
+const addDoc = await schema.findOne({
+user
+});
+
+if(!addDoc) {
+const newAdd = new schema({
+user: user,
+username: name,
+deer: amount,
+})
+
+await newAdd.save().catch(e => console.log(`Something went wrong while trying to add money: ${e}`))
+
+return newAdd;
+}
+
+addDoc.deer -= parseInt(amount, 10)
+await addDoc.save().catch(e => console.log(`Something went wrong while trying to add mone: ${e}`))
+
+return addDoc;
+
+
+},
+subcc: async function (user, name, amount) {
+if(!user) throw new TypeError("No user id was provided")
+if(!amount) throw new TypeError("An amount of money need to be provided")
+
+if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
+
+const addDoc = await schema.findOne({
+user
+});
+
+if(!addDoc) {
+const newAdd = new schema({
+user: user,
+username: name,
+cc: amount,
+})
+
+await newAdd.save().catch(e => console.log(`Something went wrong while trying to add money: ${e}`))
+
+return newAdd;
+}
+
+addDoc.cc -= parseInt(amount, 10)
+await addDoc.save().catch(e => console.log(`Something went wrong while trying to add mone: ${e}`))
+
+return addDoc;
+
+
+},
+
+subwildpig: async function (user, name, amount) {
+if(!user) throw new TypeError("No user id was provided")
+if(!amount) throw new TypeError("An amount of money need to be provided")
+
+if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
+
+const addDoc = await schema.findOne({
+user,
+});
+
+if(!addDoc) {
+const newAdd = new schema({
+user: user,
+username: name,
+wildpig: amount,
+})
+
+await newAdd.save().catch(e => console.log(`Something went wrong while trying to add money: ${e}`))
+
+return newAdd;
+}
+
+addDoc.wildpig -= parseInt(amount, 10)
+await addDoc.save().catch(e => console.log(`Something went wrong while trying to add mone: ${e}`))
+
+return addDoc;
 
 
 },

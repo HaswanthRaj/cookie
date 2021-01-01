@@ -13,8 +13,8 @@ module.exports={
         .setColor("RANDOM")
         .setDescription(
           `------------------------------------------------
-          **Name:** ${message.author.id}
-          
+          **Name:** ${message.author.username}
+
           **Wallet:** ${bal.money} 🍪`
         )
         .setTimestamp()
