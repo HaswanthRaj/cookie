@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 module.exports = {
   init:  () =>{
     
-   mongoose.connect("mongodb+srv://cookie:cookie123@cluster0.wjs6y.mongodb.net/Data?retryWrites=true&w=majority",
+   mongoose.connect("mongodb+srv://cookie:uGuT2BHCyk3zpJbx@cluster0.wjs6y.mongodb.net/project0?retryWrites=true&w=majority",
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
