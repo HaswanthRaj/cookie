@@ -6,7 +6,7 @@ const Enmap = require("enmap");
 const client = new Discord.Client({
     disableEveryone: true,
   });
-
+  client.mongoose = require('./structures/mongoose')
 client.commands = new Enmap();
 client.queue = new Map();
 const config = require("./botconfig.json");
@@ -48,5 +48,5 @@ client.giveawaysManager = manager;
   client.on('messageDelete', async (message) =>{
     require("./events/guild/messageDelete")(client, message)
   })
-  
+  client.mongoose.init();
   client.login(token);
