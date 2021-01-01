@@ -16,7 +16,7 @@ module.exports={
             { name: '**Xbox Game Pass**', value: '`Price:~~20000~~  10000 🍪 `',inline: false },
             { name: '**Green Color**', value: '`Price: 500 🍪 `',inline: false },
             {name: "**Violet Color**",  value: '`Price: 500 🍪`', inline:false }
-           
         )
+        message.channel.send(emb)
     }
 }
