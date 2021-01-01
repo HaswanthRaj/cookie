@@ -44,7 +44,6 @@ module.exports = {
     add: async function (user, name, amount, options) {
         if(!user) throw new TypeError("No user id was provided")
     if(!amount) throw new TypeError("An amount of money need to be provided")
-    if(!isNaN(amount)) throw new TypeError("Amount need to be a number")
     if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
     
     const addDoc = await schema.findOne({
@@ -127,7 +126,7 @@ module.exports = {
           sub: async function(){
             if(!user) throw new TypeError("No user id was provided")
             if(!amount) throw new TypeError("An amount of money need to be provided")
-            if(!isNaN(amount)) throw new TypeError("Amount of money meed to be a number")
+           
             if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
             
             const subtractDoc = await schema.findOne({
@@ -180,7 +179,7 @@ module.exports = {
           trex: async function (user, name, amount) {
             if(!user) throw new TypeError("No user id was provided")
         if(!amount) throw new TypeError("An amount of money need to be provided")
-        if(!isNaN(amount)) throw new TypeError("Amount need to be a number")
+       
         if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
         
         const addDoc = await schema.findOne({
@@ -211,7 +210,7 @@ module.exports = {
     fish: async function (user, name, amount) {
       if(!user) throw new TypeError("No user id was provided")
   if(!amount) throw new TypeError("An amount of money need to be provided")
-  if(!isNaN(amount)) throw new TypeError("Amount need to be a number")
+ 
   if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
   
   const addDoc = await schema.findOne({
@@ -271,7 +270,7 @@ return addDoc;
  cc: async function (user, name, amount) {
   if(!user) throw new TypeError("No user id was provided")
  if(!amount) throw new TypeError("An amount of money need to be provided")
- if(!isNaN(amount)) throw new TypeError("Amount need to be a number")
+
  if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
 
  const addDoc = await schema.findOne({

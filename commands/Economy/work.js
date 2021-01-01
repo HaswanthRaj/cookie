@@ -11,7 +11,7 @@ module.exports={
         const job = jobs[Math.floor(Math.random() * jobs.length)];
         let coins = Math.floor(Math.random() * 100);
         let am = parseInt(coins)
-        await add(message.author.id,  message.author.username, am)
+        await add(message.author.id,  message.author.tag, am)
         let bal = await balance(message.author.id)
         const emb = new Discord.MessageEmbed()
         .setColor('RANDOM')
