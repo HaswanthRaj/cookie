@@ -73,7 +73,7 @@ module.exports={
                             }else{
                                
                                 await sub(message.author.id, 500)
-                                const emb = new Discord.MessageEmbed()
+                                const em= new Discord.MessageEmbed()
                                 .setColor('RED')
                                 .setAuthor('COOKIE SHOP')
                                 .setDescription(`
@@ -88,8 +88,8 @@ module.exports={
                                     return message.channel.send(`I can't find Green color role please ask admin to check it`)
                                 }
                                 message.member.roles.add(role.id)
-                                message.channel.send(emb)
-                                orderchannel.send(emb)
+                                message.channel.send(em)
+                                orderchannel.send(em)
                                
                             }
                         }
