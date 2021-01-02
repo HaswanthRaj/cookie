@@ -2,7 +2,7 @@ const { balance } = require('../../structures/economy')
 const { add } = require('../../structures/economy')
 const Discord = require('discord.js')
 module.exports={
-    name: "work",
+    name: "daily",
     category: "Economy",
     timeout:  86300000,
     run: async(client, message, args)=>{
