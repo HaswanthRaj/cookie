@@ -37,6 +37,7 @@ module.exports={
                         `)
                     }
                 }
+                break;
                 case "2":
                     {
                         let data = await balance(message.author.id)
@@ -65,6 +66,7 @@ module.exports={
                            
                         }
                     }
+                    break;
                     case "3":
                         {
                             let data = await balance(message.author.id)
@@ -93,6 +95,11 @@ module.exports={
                                
                             }
                         }
+                        break;
+                        default:{
+                            message.channel.send('No Items found')
+                        }
+
         }
     }
 }
