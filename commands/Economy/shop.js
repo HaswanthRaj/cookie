@@ -14,8 +14,8 @@ module.exports={
         emb.addFields(
             { name: '\u200B', value: '\u200B' },
             { name: '**1. Xbox Game Pass**', value: 'Price:~~20000~~ ` 10000 🍪 `',inline: false },
-            { name: '**2. Violet Color**', value: 'Price: `500 🍪 `',inline: false },
-            { name: "**3. Green Color **",  value: 'Price: `500 🍪`', inline:false }
+            //{ name: '**2. Violet Color**', value: 'Price: `500 🍪 `',inline: false },
+            //{ name: "**3. Green Color **",  value: 'Price: `500 🍪`', inline:false }
         )
         emb.setFooter('You can buy Cool itmes in this cookie shop ')
         emb.setTimestamp()
