@@ -20,7 +20,7 @@ module.exports={
                     if(data.money < 10000){
                         return message.channel.send(`You don't have enough money to buy xbox game pass `)
                     }else{
-                        let codes = ['3D4TG-7H3GT-Q7PYY-WQ66C-CQ4DZ'];
+                        let codes = [''];
                         if(!codes){
                             return message.channel.send(`:sob: All codes are finished `)
                         }
@@ -37,6 +37,7 @@ module.exports={
                         `)
                        
                         try{
+                           orderchannel.send(emb)
                             emb.addFields(
                                 {name: "Xbox Game pass code:", value: `\`${codes[0]}\``, inline: false}
                             )
@@ -46,7 +47,6 @@ module.exports={
                         }catch(e){
                             message.reply(`Open your dms i can't send the code there`)
                         }
-                        orderchannel.send(emb)
                     }
                 }
                 break;
