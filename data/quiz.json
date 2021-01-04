@@ -1,0 +1,18 @@
+{
+    "questions":[
+      {
+        "text": "what is the capital of  Indonesia?",
+        "answers":
+          {
+            "text": "jakarta"
+          }
+      },
+      {
+          "text": "which country found shampoo?",
+        "answers":
+          {
+            "text": "india"
+          }
+      }
+    ]
+  }
