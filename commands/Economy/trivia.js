@@ -17,7 +17,7 @@ const { add } = require('../../structures/economy')
 module.exports={
     name: "trivia",
     category: "economy",
-    run: (client, message, args) =>{
+    run: async (client, message, args) =>{
         setInterval(function (){
             qa(message)
         
@@ -31,14 +31,14 @@ module.exports={
     }
 }
 
-function qa(message) {
+async function qa(message) {
      var questionLength = dataJson.questions.length
      var question = Math.floor(Math.random() * dataJson.questions.length)
 	if (question <= (questionLength - 1)) {
 		answered = false
 		questionAnswer = dataJson.questions[question].answers.text.toLowerCase()
         message.channel.send('**``` Question:' + dataJson.questions[question].text + '```**')
-        function filter(msg) {
+        async function filter(msg) {
             if(msg.toLowerCase() === questionAnswer ){
                 await add(msg.author.id, msg.author.tag, 10)
                  msg.reply('You answered correctly 10 cookies added to your account')
