@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const fs = require('fs')
-const data = fs.readFileSync("../../data/quiz.json", 'utf-8')
+const data = fs.readFileSync("./data/quiz.json", 'utf-8')
 const { add } = require('../../structures/economy')
 
 
