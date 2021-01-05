@@ -1,5 +1,4 @@
 const Discord = require('discord.js')
-var fs = require('fs')
 const { add } = require('../../structures/economy')
 
 
@@ -18,15 +17,16 @@ module.exports={
     category: "economy",
     run: async (client, message, args) =>{
         dataJson = JSON.parse(client.data)
+        if(args[0] === "start"){
         setInterval(function (){
-            qa(message)
-        
+             qa(message)      
 
         setTimeout(function () {
            message.delete()
            message.channel.send('No one answered the question')
         }, 20000)
         }, 190000)
+    }
         
     }
 }
@@ -39,7 +39,7 @@ async function qa(message) {
 		questionAnswer = dataJson.questions[question].answers.text.toLowerCase()
         message.channel.send('**``` Question:' + dataJson.questions[question].text + '```**')
         async function filter(msg) {
-            if(msg.toLowerCase() === questionAnswer ){
+            if(msg.content.toLowerCase() === questionAnswer ){
                 await add(msg.author.id, msg.author.tag, 10)
                  msg.reply('You answered correctly 10 cookies added to your account')
                 
