@@ -1,18 +1,201 @@
 {
-    "questions":[
-      {
-        "text": "what is the capital of  Indonesia?",
-        "answers":
-          {
-            "text": "jakarta"
-          }
-      },
-      {
-          "text": "which country found shampoo?",
-        "answers":
-          {
-            "text": "india"
-          }
+  "questions": [
+    {
+      "text": "what is the capital of  Indonesia?",
+      "answers": {
+        "text": "jakarta"
       }
-    ]
-  }
+    },
+    {
+      "text": "which country found shampoo?",
+      "answers": {
+        "text": "india"
+      }
+    },
+    {
+      "text": "which country has world's Powerfull army?",
+      "answers": {
+        "text": "usa"
+      }
+    },
+    {
+      "text": "who is the developer of the cookie bot?",
+      "answers": {
+        "text": "lone"
+      }
+    },
+    {
+      "text": "in which country pyramid is located?",
+      "answers": {
+        "text": "egypt"
+      }
+    },
+    {
+      "text": "In which galaxy we are living?",
+      "answers": {
+        "text": "milkyway"
+      }
+    },
+    {
+      "text": "Repeat the word 'COOKIE'",
+      "answers": {
+        "text": "COOKIE"
+      }
+    },
+    {
+      "text": "What is the capital city of Egpyt",
+      "answers": {
+        "text": "cairo"
+      }
+    },
+    {
+      "text": "name the watch ben10 wear",
+      "answers": {
+        "text": "omnitrix"
+      }
+    },
+    {
+      "text": "Repeat the word 'BRUUUUUUUUH'",
+      "answers": {
+        "text": "BRUUUUUUUUH"
+      }
+    },
+    {
+      "text": "Who made this bot",
+      "answers": {
+        "text": "lone"
+      }
+    },
+
+    {
+      "text": "Is Rob enabled in this sevrer ?",
+      "answers": {
+        "text": "no"
+      }
+    },
+
+    {
+      "text": "Repeat the word 'BRUUUUUUUUH'",
+      "answers": {
+        "text": "BRUUUUUUUUH"
+      }
+    },
+    {
+      "text": "which year corona virus started to spread",
+      "answers": {
+        "text": "2019"
+      }
+    },
+    {
+      "text": "You like this server??",
+      "answers": {
+        "text": "yes"
+      }
+    },
+    {
+      "text": "Press F to pay Respect for Adobe Flash",
+      "answers": {
+        "text": "F"
+      }
+    },
+
+    {
+      "text": "Captain Price is a character from which video game series",
+      "answers": {
+        "text": "call of duty"
+      }
+    },
+    {
+      "text": "pharaoh is a ______",
+      "answers": {
+        "text": "king"
+      }
+    },
+    {
+      "text": "Who is the Owner of **COOKIE**",
+      "answers": {
+        "text": "AK_FORTY7"
+      }
+    },
+    {
+      "text": "You like me?",
+      "answers": {
+        "text": "yes"
+      }
+    },
+    {
+      "text": "Which country found plastic surgery",
+      "answers": {
+        "text": "india"
+      }
+    },
+    {
+      "text": "What is second country in making trains",
+      "answers": {
+        "text": "egypt"
+      }
+    },
+    {
+      "text": "name the country Land of rising sun",
+      "answers": {
+        "text": "japan"
+      }
+    },
+    {
+      "text": "am i cool 😎",
+      "answers": {
+        "text": "yes"
+      }
+    },
+    {
+      "text": "What you like to eats?",
+      "answers": {
+        "text": "cookies"
+      }
+    },
+    {
+      "text": "what is the longest river in the earth",
+      "answers": {
+        "text": "nile"
+      }
+    },
+    
+    {
+      "text": "which country found water on moon?",
+      "answers": {
+        "text": "india"
+      }
+    },
+    {
+      "text": "What is the national currency of South Korea",
+      "answers": {
+        "text": "won"
+      }
+    },
+    
+    {
+      "text": "Total continents present in the world ",
+      "answers": {
+        "text": "7"
+      }
+    },
+    {
+      "text": "total number of oceans present in the world",
+      "answers": {
+        "text": "5"
+      }
+    },
+    {
+      "text": "What continent you can find india",
+      "answers": {
+        "text": "Asia"
+      }
+    },
+    {
+      "text": "which country gifted 'statue of liberty ' to USA in 1886",
+      "answers": {
+        "text": "france"
+      }
+    }    
+  ]
+}
