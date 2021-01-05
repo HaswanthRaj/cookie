@@ -17,7 +17,6 @@ module.exports={
     category: "economy",
     run: async (client, message, args) =>{
         dataJson = JSON.parse(client.data)
-        if(args[0] === "start"){
         setInterval(function (){
              qa(message)      
 
@@ -26,7 +25,6 @@ module.exports={
            message.channel.send('No one answered the question')
         }, 20000)
         }, 190000)
-    }
         
     }
 }
