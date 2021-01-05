@@ -24,7 +24,7 @@ module.exports={
            message.delete()
            message.channel.send('No one answered the question')
         }, 20000)
-        }, 190000)
+        }, 300000)
         
     }
 }
