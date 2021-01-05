@@ -1,12 +1,11 @@
 const Discord = require('discord.js')
-const fs = require('fs')
-const data = fs.readFileSync("./quiz.json", 'utf-8')
+var fs = require('fs')
 const { add } = require('../../structures/economy')
 
 
 
 //Essential variables
-        var dataJson = JSON.parse(data)
+        var dataJson
         var answered = false
         var players = []
         var names = []
@@ -18,6 +17,7 @@ module.exports={
     name: "trivia",
     category: "economy",
     run: async (client, message, args) =>{
+        dataJson = JSON.parse(client.data)
         setInterval(function (){
             qa(message)
         

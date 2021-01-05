@@ -9,6 +9,7 @@ const client = new Discord.Client({
   client.mongoose = require('./structures/mongoose')
 client.commands = new Enmap();
 client.queue = new Map();
+client.data = fs.readFileSync('./data/quiz.json', 'utf-8')
 const config = require("./botconfig.json");
 const token = config.token;
 client.snipeMap = new Map();
