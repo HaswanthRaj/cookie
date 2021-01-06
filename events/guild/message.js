@@ -70,7 +70,7 @@ module.exports = async (bot , message) => {
             const timePassed = Date.now() - found;
             const timeLeft = timeout - timePassed;
             //the part at this command has a default cooldown of, did you want to hard code 15s? or have it be the commands.config.timeout?
-            return message.reply(`**Slow down, you can use this command again in ${ms(timeLeft)} This command has a default cooldown of ${timeout}!**`);
+            return message.reply(`**Cool Down down, you can use this command again in ${ms(timeLeft)} This command has a default cooldown of ${ms(timeout)}!**`);
           } else {
             command.run(bot, message, args);
             Timeout.set(key, Date.now());
