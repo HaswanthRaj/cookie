@@ -196,6 +196,36 @@
       "answers": {
         "text": "france"
       }
-    }    
+    },
+    {
+      "text": "How many countries successully sent probe to mars?",
+      "answers": {
+        "text": "3"
+      }
+    },
+    {
+      "text": "Which country sent probe to mars at first atempt ",
+      "answers": {
+        "text": "india"
+      }
+    },
+    {
+      "text": "First Asian country to sent probe to mars",
+      "answers": {
+        "text": "india"
+      }
+    },
+    {
+      "text": "what is the world's oldest living language?",
+      "answers": {
+        "text": "tamil"
+      }
+    },
+    {
+      "text": "What playstation is product of ______",
+      "answers": {
+        "text": "sony"
+      }
+    }
   ]
 }

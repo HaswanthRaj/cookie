@@ -1,5 +1,5 @@
   
-const Timeout = new Set();
+const Timeout = new Map();
 const {MessageEmbed} = require('discord.js')
 const {prefixes} = require('../../botconfig.json')
 const Discord = require('discord.js')
@@ -63,16 +63,22 @@ module.exports = async (bot , message) => {
     
     if (command) {
         if(command.timeout){
-            if(Timeout.has(`${message.author.id}${command.name}`)) {
-                return message.reply(`You can only use this command every ${ms(command.timeout)}!`)
-            }else{
-                
-                command.run(bot, message, args);
-                Timeout.add(`${message.author.id}${command.name}`)
-                setTimeout(() => {
-                    Timeout.delete(`${message.author.id}${command.name}`)
-                }, command.timeout);
-            }
+          const timeout = command.timeout;
+          const key = message.author.id + command.name;
+          const found = Timeout.get(key);
+          if(found) {
+            const timePassed = Date.now() - found;
+            const timeLeft = timeout - timePassed;
+            //the part at this command has a default cooldown of, did you want to hard code 15s? or have it be the commands.config.timeout?
+            return message.reply(`**Slow down, you can use this command again in ${ms(timeLeft)} This command has a default cooldown of ${timeout}!**`);
+          } else {
+            command.run(bot, message, args);
+            Timeout.set(key, Date.now());
+          
+            setTimeout(() => {
+               Timeout.delete(key);
+            }, timeout);
+          }
         }else{
             command.run(bot,message,args)
         }
