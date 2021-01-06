@@ -35,7 +35,7 @@ async function qa(message) {
 	if (question <= (questionLength - 1)) {
 		answered = false
 		questionAnswer = dataJson.questions[question].answers.text.toLowerCase()
-        message.channel.send('```css \n Quiz Time Bros !!!! \n ``` \n **Question: \n ' + dataJson.questions[question].text + '**')
+        message.channel.send('```css\nQuiz Time Bros !!!!\n``` \n **Question: \n ' + dataJson.questions[question].text + '**')
         async function filter(msg) {
             if(msg.content.toLowerCase() === questionAnswer ){
                 await add(msg.author.id, msg.author.tag, 10)
