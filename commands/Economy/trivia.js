@@ -19,12 +19,7 @@ module.exports={
         dataJson = JSON.parse(client.data)
         setInterval(function (){
              qa(message)      
-
-        setTimeout(function () {
-           message.delete()
-           message.channel.send('No one answered the question')
-        }, 20000)
-        }, 300000)
+        }, 900000)
         
     }
 }
