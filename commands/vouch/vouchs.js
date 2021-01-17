@@ -23,5 +23,6 @@ module.exports={
         if(voch > 20){
             msg=`**This user Trusted vouchs: ${data.vouch}**`
         }
+        message.channel.send(msg)
     }//ok
 }//add
