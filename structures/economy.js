@@ -39,7 +39,7 @@ module.exports = {
         return newFetch;
       }
       
-      return { money: fetchDoc.vouch }
+      return { vouch: fetchDoc.vouch }
     
     },
 
