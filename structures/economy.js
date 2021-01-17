@@ -6,7 +6,6 @@ module.exports = {
     const createDoc = await schema.findOne({
       user
     })
-    
     if(createDoc) return false
     
     const create = new schema({
@@ -17,6 +16,32 @@ module.exports = {
     await create.save().catch(e => console.log(`Something went wrong while trying to create a new user: ${e}`))
     
     return create;
+    },
+
+
+
+    //vouchs
+
+    vouch: async function(user, name, message){
+      if(!user) throw new TypeError("No user id was provided")
+      const fetchDoc = await schema.findOne({
+        user
+      })
+      
+      if(!fetchDoc) {
+        const newFetch = new schema({
+          user,
+          name,
+          vouch
+        })
+        
+        newFetch.save().catch(e => console.log(`There was an error while trying to fetch data`))
+        
+        return newFetch;
+      }
+      
+      return { money: fetchDoc.vouch }
+    
     },
 
     balance: async function(user, name) {
@@ -39,6 +64,67 @@ module.exports = {
         return { money: fetchDoc.money, bank: fetchDoc.bank }
       
     },
+
+    addvouch: async function (user) {
+      if(!user) throw new TypeError("No user id was provided")
+  if(!amount) throw new TypeError("An amount of money need to be provided")
+  if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
+  
+  const addDoc = await schema.findOne({
+    user
+  });
+  
+  if(!addDoc) {
+    const newAdd = new schema({
+      user: user,
+      vouch: amount
+    })
+    
+    await newAdd.save().catch(e => console.log(`Something went wrong while trying to add money: ${e}`))
+    
+    return newAdd;
+  }
+  
+  addDoc.vouch += parseInt(1, 10)
+  await addDoc.save().catch(e => console.log(`Something went wrong while trying to add mone: ${e}`))
+  
+  return addDoc;
+  },
+
+
+  subvouch: async function (user, name, amount) {
+    if(!user) throw new TypeError("No user id was provided")
+if(!amount) throw new TypeError("An amount of money need to be provided")
+if(amount <= 0) throw new TypeError("Amount of money need to be greater than 0")
+
+const addDoc = await schema.findOne({
+  user
+});
+
+if(!addDoc) {
+  const newAdd = new schema({
+    user: user,
+    username: name,
+    vouch: amount
+  })
+  
+  await newAdd.save().catch(e => console.log(`Something went wrong while trying to add money: ${e}`))
+  
+  return newAdd;
+}
+
+addDoc.vouch += parseInt(1, 10)
+addDoc.username = name
+await addDoc.save().catch(e => console.log(`Something went wrong while trying to add mone: ${e}`))
+
+return addDoc;
+},
+
+
+
+
+
+    //economy
     userdata: async function(user) {
       if(!user) throw new TypeError("No user id was provided")        
       const fetchData = await schema.findOne({

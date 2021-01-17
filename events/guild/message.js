@@ -13,6 +13,7 @@ module.exports = async (bot , message) => {
      
    
     if (message.author.bot) return;
+    if(!message.guild.id === "745535441473896469") return;
 
 
 
