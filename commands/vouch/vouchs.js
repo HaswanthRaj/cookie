@@ -15,14 +15,17 @@ module.exports={
         let voch = data.vouch
         let msg
         if(voch < 10){
-             msg = `**This  user not Trusted Yet vouchs: ${data.vouch}**`
+             msg = "**This  user not Trusted Yet vouchs:**"
         }
         if(voch >= 10){
-            msg=`**This user Trusted vouchs: ${data.vouch}**`
+            msg= " **This user Trusted worthy vouchs: **"
         }
         if(voch > 20){
-            msg=`**This user Trusted vouchs: ${data.vouch}**`
+            msg= "**This user Trusted vouchs: **"
         }
-        message.channel.send(msg)
+        if(voch >= 30){
+            msg= "**This user Super Trusted vouchs: **"
+        }
+        message.channel.send(msg + voch)
     }//ok
 }//add
