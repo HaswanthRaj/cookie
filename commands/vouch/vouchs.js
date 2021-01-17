@@ -29,7 +29,7 @@ module.exports={
         }
 
         switch(opt){
-            case 1:{
+            case "1":{
                 const emb = new Discord.MessageEmbed()
                 .setColor('FF0000')
                 .setTitle('Vouches')
@@ -37,7 +37,7 @@ module.exports={
                 message.channel.send(emb)
             }
             break;
-            case 2:{
+            case "2":{
                 const emb = new Discord.MessageEmbed()
                 .setColor('E38A00')
                 .setTitle('Vouches')
@@ -45,7 +45,7 @@ module.exports={
                 message.channel.send(emb)
             }
             break;
-            case 3:{
+            case "3":{
                 const emb = new Discord.MessageEmbed()
                 .setColor('68FC01')
                 .setTitle('Vouches')
@@ -53,7 +53,7 @@ module.exports={
                 message.channel.send(emb)
             }
             break;
-            case 4:{
+            case "4":{
                 const emb = new Discord.MessageEmbed()
                 .setColor('01FC09')
                 .setTitle('Vouches')
