@@ -12,7 +12,7 @@ const economy = mongoose.Schema({
         default: 0
       },
       vouch: {
-        type: String,
+        type: Number,
         default: 0
       },
       bank: {

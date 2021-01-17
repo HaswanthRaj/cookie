@@ -22,7 +22,7 @@ module.exports = {
 
     //vouchs
 
-    vouch: async function(user, name, message){
+    vouch: async function(user, message){
       if(!user) throw new TypeError("No user id was provided")
       const fetchDoc = await schema.findOne({
         user
@@ -31,7 +31,6 @@ module.exports = {
       if(!fetchDoc) {
         const newFetch = new schema({
           user,
-          name,
           vouch
         })
         

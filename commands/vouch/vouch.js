@@ -3,9 +3,11 @@ const { addvouch } = require('../../structures/economy')
 const Discord = require('discord.js')
 module.exports={
     name: "vouch",
+    aliases: ["v"],
     category: "Economy",
     run: async(client, message, args)=>{
         if(!message.channel == "800379396808376340") return
+        
         if(!args[0]){
             message.channel.send('Mention a user to send vouch :)');
         }

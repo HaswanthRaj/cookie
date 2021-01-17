@@ -2,7 +2,7 @@ const { balance } = require('../../structures/economy')
 const { vouch } = require('../../structures/economy')
 const Discord = require('discord.js')
 module.exports={
-    name: "vouchs",
+    name: "vouches",
     category: "Economy",
     run: async(client, message, args)=>{
         if(!args[0]){
@@ -10,7 +10,7 @@ module.exports={
         }
             var user = message.mentions.users.first().id 
             if(!user) return message.member.send('Type`\' vouch <mention>` to add cash to others')
-        let data = await vouch(user, user.user.username, message)
+        let data = await vouch(user, message)
 
         let voch = data.vouch
         let msg
