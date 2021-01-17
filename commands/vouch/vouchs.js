@@ -15,17 +15,17 @@ module.exports={
         let voch = data.vouch
         let opt
         if(voch < 1){
-             opt = 1
+             opt = "1"
         }
         if(voch >= 10){
-            opt = 2
+            opt = "2"
         }
         if(voch > 20){
           
-            opt= 3
+            opt= "3"
         }
         if(voch >= 30){
-            opt = 4
+            opt = "4"
         }
 
         switch(opt){
