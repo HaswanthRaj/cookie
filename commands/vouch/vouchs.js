@@ -9,23 +9,23 @@ module.exports={
             message.channel.send('Mention a user to send vouch :)');
         }
             var user = message.mentions.users.first().id 
-            if(!user) return message.member.send('Type`\' vouch <mention>` to add cash to others')
+            if(!user) return message.member.send('Type`\' vouches <mention>` to check vouches of to others')
         let data = await vouch(user, message)
 
         let voch = data.vouch
         let opt
         if(voch < 1){
-             opt = "1"
+             opt = 1
         }
         if(voch >= 10){
-            opt = "2"
+            opt = 2
         }
         if(voch > 20){
           
-            opt= "3"
+            opt= 3
         }
         if(voch >= 30){
-            opt = "4"
+            opt = 4
         }
 
         switch(opt){
