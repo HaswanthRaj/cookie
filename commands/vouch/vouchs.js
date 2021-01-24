@@ -13,7 +13,8 @@ module.exports={
         let data = await vouch(user, message)
 
         let voch = data.vouch
-        let opt
+        message.channel.send(`Vouches: ${voch}`)
+       /* let opt
         if(voch < 1){
              opt = 1
         }
@@ -65,6 +66,6 @@ module.exports={
                 return
             }
 
-        }
+        }*/
     }//ok
 }//add
