@@ -66,6 +66,7 @@ module.exports = {
 
     addvouch: async function (user) {
       if(!user) throw new TypeError("No user id was provided")
+      let amount = parseInt(1,10)
   
   const addDoc = await schema.findOne({
     user
